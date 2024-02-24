@@ -233,5 +233,5 @@ plot!(y.t, u2, label = "Y side", xlimit=[0, 0.0001])
 
 # Список литературы{.unnumbered}
 
-::: {#refs}
-:::
+- [https://esystem.rudn.ru/pluginfile.php/2289993/mod_resource/content/2/Лабораторная%20работа%20№%202.pdf]
+- [https://ru.wikipedia.org/wiki/Законы_Осипова_—_Ланчестера]
