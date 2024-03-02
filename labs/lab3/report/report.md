@@ -4,7 +4,7 @@ title: "Отчёт по лабораторной работе №3"
 subtitle: "Модель боевых действий, вариант 26"
 author: "Маслова Анастасия Сергеевна"
 
-## Generic otions
+## Generic options
 lang: ru-RU
 toc-title: "Содержание"
 
