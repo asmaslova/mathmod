@@ -152,45 +152,41 @@ $$
 Для начала реализуем описанную выше теорию в языке программирования Julia:
 ```Julia
 #вариант 26
-
 using Plots
 using DifferentialEquations
 
-#Начальные условия и параметры
+tspan = (0,53)
 
-tspan = (0,62)
+p1 = [0, 4.4]
+p2 = [2.5, 4]
+p3 = [2, 3.3]
 
-p1 = [0,10]
-p2 = [1.5,3.0]
-p3 = [0.6,1.0]
+du0 = [-1.5]
+u0 = [0]
 
-du0 = [-1.0]
-u0 = [0.8]
-
-#без действий внешней силы
-
-function harm_osc(du,u,p,t)
+function harmonic_osc(du, u, p, t)
 	g,w = p
 	du[1] = u[2]
 	du[2] = -w^2 .* u[1] - g.*u[2]
 end
 
-#внешняя сила
-f(t) = cos(1.5*t)
+f(t) = 3.3*cos(2*t)
 
-#с действием внешней силы
-function forced_harm_osc(du,u,p,t)
+function forced_harmonic_osc(du, u, p, t)
 	g,w = p
 	du[1] = u[2]
-	du[2] = -w^2 .* u[1] - g.*u[2] .+f(t)
+	du[2] = -w^2 .* u[1] - g.*u[2].*f(t)
 end
 
-problem1 = ODEProblem(harm_osc, [0.8, -1], tspan, p1)
-solution1 = solve(problem1, Tsit5(),saveat=0.05)
-problem2 = ODEProblem(harm_osc, [0.8, -1], tspan, p2)
-solution2 = solve(problem2, Tsit5(),saveat=0.05)
-problem3 = ODEProblem(forced_harm_osc, [0.8, -1], tspan, p3)
-solution3 = solve(problem3, Tsit5(),saveat=0.05)
+prob1 = ODEProblem(harmonic_osc, [0, -1.5], tspan, p1)
+sol1 = solve(prob1, Tsit5(), saveat=0.05)
+
+prob2 = ODEProblem(harmonic_osc, [0, -1.5], tspan, p2)
+sol2 = solve(prob2, Tsit5(), saveat=0.05)
+
+prob3 = ODEProblem(forced_harmonic_osc, [0, -1.5], tspan, p3)
+sol3 = solve(prob3, Tsit5(), saveat=0.05)
+
 ```
 В результате у меня получились три фазовых портрета для трех случае: без затуханий и без действий внешней силы (рис. @fig:001), с затуханием и без действий внешней силы (рис. @fig:002), с затуханием и под действием внешней силы (рис. @fig:003).
 
