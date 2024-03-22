@@ -95,7 +95,47 @@ $\frac{dn}{dt} = (\alpha _1(t) + \alpha _2(t)n(t))(N - n(t))$ (1)
 
 # Выполнение лабораторной работы
 
-ver1
+Сначала реализуем данную модель с помощтю языка программирования Julia.
+
+```Julia
+#вариант 26
+
+using Plots
+using DifferentialEquations
+
+n0 = 16
+p1 = [0.84, 0.00002, 910]
+p2 = [0.000084, 0.6, 910]
+p3 = [0.3, 0.3, 910]
+tspan = (0, 20)
+tspan1 = (0, 0.1)
+tspan2 = (0, 0.6)
+
+f12(n,p,t) = (p[1] + p[2]*n)*(p[3]-n) 
+
+f3(n,p,t) = (p[1]*sin(3*t) + p[2]*t*n)*(p[3]-n) 
+
+problem1 = ODEProblem(f12, n0, tspan, p1)
+problem2 = ODEProblem(f12, n0, tspan1, p2)
+problem3 = ODEProblem(f3, n0, tspan2, p3)
+
+solution1 = solve(problem1, Tsit5())
+solution2 = solve(problem2, Tsit5())
+solution3 = solve(problem3, Tsit5())
+
+plot(solution2)
+#savefig("C:\\Users\\anast\\work\\study\\2023-2024\\Математическое моделирование\\mathmod\\labs\\lab7\\report\\image\\julia3.png")
+```
+В результате мы получаем графики (рис. @fig:001, @fig:002, @fig:003).
+
+![График для первого случая](image/julia1.png){#fig:001 width=70%}
+
+![График для второго случая](image/julia2.png){#fig:002 width=70%}
+
+![График для третьего случая](image/julia3.png){#fig:003 width=70%}
+
+Реализуем то же самое в OpenModelica. Для первого случая код выглядел следующим образом:
+
 ```Modelica
 model lab7
 
@@ -112,8 +152,12 @@ der(n) = (a+b*n)*(N-n);
 end lab7;
 ```
 
+В итоге мы получили график (рис. @fig:004).
 
-ver2
+![График для первого случая](image/mod1.png){#fig:004 width=70%}
+
+Для второго случая код выглядел следующим образом:
+
 ```Modelica
 model lab7
 
@@ -130,8 +174,12 @@ der(n) = (a+b*n)*(N-n);
 end lab7;
 ```
 
+В итоге наша модель выглядела так (рис. @fig:005)
 
-ver3
+![График для второго случая](image/mod2.png){#fig:005 width=70%}
+
+Код для третьего случая показан ниже:
+
 ```Modelica
 model lab7
 
@@ -148,7 +196,9 @@ der(n) = (a*sin(3*time)+b*time*n)*(N-n);
 end lab7;
 ```
 
+График для него выглядел следующим образом (рис. @fig:006).
 
+![График для третьего случая](image/mod3.png){#fig:006 width=70%}
 
 # Список литературы{.unnumbered}
 
