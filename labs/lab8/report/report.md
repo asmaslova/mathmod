@@ -80,7 +80,7 @@ $$ \frac{dM_1}{d\theta} = M_1 - \frac{b}{c_1} M_1 M_2 - \frac{a_1}{c_1}M_1^2 $$
 
 $$ \frac{dM2}{d\theta} = \frac{c_2}{c_1}M2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{c_1}M_2^2 $$ 
 
-где $ a_1 = \frac{p_cr}{\tau^2_1\tilde{p^2_1}Nq} $, $ a_2 = \frac{p_cr}{\tau^2_2\tilde{p^2_2}Nq} $, $ b = \frac{p_cr}{\tau^2_1\tilde{p^2_1}\tau^2_2\tilde{p^2_2}Nq} $, $ c_1 = \frac{p_cr - \tilde{p_1}}{\tau_1 tilde{p_1}} $, $ c_2 = \frac{p_cr - \tilde{p_2}}{\tau_2 tilde{p_2}} $.
+$\text{где}  a_1 = \frac{p_cr}{\tau^2_1\tilde{p^2_1}Nq} \text{, } a_2 = \frac{p_cr}{\tau^2_2\tilde{p^2_2}Nq} \text{, } b = \frac{p_cr}{\tau^2_1\tilde{p^2_1}\tau^2_2\tilde{p^2_2}Nq} \text{, } c_1 = \frac{p_cr - \tilde{p_1}}{\tau_1 tilde{p_1}} \text{, } c_2 = \frac{p_cr - \tilde{p_2}}{\tau_2 tilde{p_2}} \text{.}$
 
 Также введена нормировка $ t = c_1 \tetha $.
 
@@ -94,7 +94,7 @@ $$ \frac{dM2}{d\theta} = \frac{c_2}{c_1}M2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{
 
 $$ M^1_0 = 7.5, M^2_0 = 8.5, p_cr = 40, N = 95, q = 1, \tau_1 = 30, \tau_2 = 27, \tilde{p_1} = 11.5, \tilde{p_2} = 9.5 $$
 
-Замечание: Значения $ p_cr, \tilde{p_{1,2}}, N $ указаны в тысячах единиц, а значения $M_{1,2}$ указаны в млн. единиц.
+Замечание: Значения $p_cr$, $\tilde{p_{1,2}}$, $N$ указаны в тысячах единиц, а значения $M_{1,2}$ указаны в млн. единиц.
 
 Обозначения:
 
