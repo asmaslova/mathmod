@@ -66,7 +66,7 @@ $$ \frac{dM2}{d\theta} = \frac{c_2}{c_1}M2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{
 
 $\text{где } a_1 = \frac{p_cr}{\tau^2_1\tilde{p^2_1}Nq} \text{, } a_2 = \frac{p_cr}{\tau^2_2\tilde{p^2_2}Nq} \text{, } b = \frac{p_cr}{\tau^2_1\tilde{p^2_1}\tau^2_2\tilde{p^2_2}Nq} \text{, } c_1 = \frac{p_cr - \tilde{p_1}}{\tau_1 \tilde{p_1}} \text{, } c_2 = \frac{p_cr - \tilde{p_2}}{\tau_2 \tilde{p_2}} \text{.}$
 
-$\text{Также введена нормировка } t = c_1 * \tetha \text{.}$
+$\text{Также введена нормировка } t = c_1 * \theta \text{.}$
 
 ## Вариант 26
 
